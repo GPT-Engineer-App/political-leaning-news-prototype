@@ -11,7 +11,28 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const fonts = {
+  heading: "Georgia, serif",
+  body: "Georgia, serif",
+};
+
+const styles = {
+  global: {
+    body: {
+      bg: "#f5f5f5",
+      color: "#333",
+      lineHeight: "1.6",
+    },
+    a: {
+      color: "#2a69ac",
+      _hover: {
+        textDecoration: "underline",
+      },
+    },
+  },
+};
+
+const theme = extendTheme({ colors, fonts, styles });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
