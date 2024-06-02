@@ -20,14 +20,16 @@ const Index = () => {
     if (!answers) return items;
     return items.filter(item => {
       const { economy, healthcare, immigration } = answers;
-      if (item.category === "Business" && item.badge.toLowerCase() === economy) return false;
-      if (item.category === "Health" && item.badge.toLowerCase() === healthcare) return false;
-      if (item.category === "World" && item.badge.toLowerCase() === immigration) return false;
+      if (item.category === "Business" && item.badge.toLowerCase() === economy.toLowerCase()) return false;
+      if (item.category === "Health" && item.badge.toLowerCase() === healthcare.toLowerCase()) return false;
+      if (item.category === "World" && item.badge.toLowerCase() === immigration.toLowerCase()) return false;
       return true;
     });
   };
 
-  const filteredNewsItems = filter === "All" ? filterNewsItems(newsItems, userAnswers) : filterNewsItems(newsItems.filter(item => item.category === filter), userAnswers);
+  const filteredNewsItems = filter === "All" 
+    ? filterNewsItems(newsItems, userAnswers) 
+    : filterNewsItems(newsItems.filter(item => item.category === filter), userAnswers);
 
   return (
     <Container maxW="container.xl" p={4}>
