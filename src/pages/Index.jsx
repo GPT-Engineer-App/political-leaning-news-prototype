@@ -27,6 +27,7 @@ const Index = () => {
           <Link href="#" color="white" onClick={() => setFilter("Business")}>Business</Link>
           <Link href="#" color="white" onClick={() => setFilter("Health")}>Health</Link>
           <Link href="#" color="white" onClick={() => setFilter("Science")}>Science</Link>
+          <Link href="/political-leaning" color="white">Political Leaning Form</Link> {/* New Link */}
         </HStack>
       </Flex>
 
