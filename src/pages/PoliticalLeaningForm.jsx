@@ -1,5 +1,6 @@
 import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Radio, RadioGroup, Stack, Text, VStack } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const PoliticalLeaningForm = () => {
   const [answers, setAnswers] = useState({
@@ -7,6 +8,8 @@ const PoliticalLeaningForm = () => {
     healthcare: "",
     immigration: "",
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (question, value) => {
     setAnswers((prevAnswers) => ({
@@ -18,7 +21,8 @@ const PoliticalLeaningForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("User's political leaning answers:", answers);
-    // Here you can add logic to store the answers or navigate to another page
+    // Navigate back to the articles page with the answers as state
+    navigate("/", { state: { answers } });
   };
 
   return (
